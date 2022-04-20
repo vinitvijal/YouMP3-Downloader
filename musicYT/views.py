@@ -31,7 +31,7 @@ def index(request):
         }
         return render(request, 'index.html', context)
     context ={
-        'title': 'YouTube MP3 Cinverter - Code Vinu',
+        'title': 'YouTube MP3 Converter - Code Vinu',
     }
     return render(request, 'index.html', context)
 
