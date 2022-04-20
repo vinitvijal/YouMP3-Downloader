@@ -28,6 +28,7 @@ def index(request):
             context = {
                 'downloadLink' : '/media/' + filename,
                 'filename' : title,
+                'YtLink' : link,
                 'title' : title,
             }
             return render(request, 'index.html', context)
