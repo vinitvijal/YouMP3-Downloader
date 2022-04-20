@@ -13,23 +13,29 @@ def index(request):
     if request.method == 'POST':
         link = request.POST.get('link')
         print(link)
+        try :
+            yt = YouTube(link)
+            title = yt.title
+            filename = nameConverter(title) + '.mp3'
+            print(title)
 
-        yt = YouTube(link)
-        title = yt.title
-        filename = nameConverter(title) + '.mp3'
+            print(filename)
 
-        print(filename)
-
-        stream = yt.streams.get_audio_only()
-        clean()
-        stream.download('media', filename)
-        print('Successful')
-        context = {
-            'downloadLink' : '/media/' + filename,
-            'filename' : title,
-            'title' : title,
-        }
-        return render(request, 'index.html', context)
+            stream = yt.streams.get_audio_only()
+            clean()
+            stream.download('media', filename)
+            print('Successful')
+            context = {
+                'downloadLink' : '/media/' + filename,
+                'filename' : title,
+                'title' : title,
+            }
+            return render(request, 'index.html', context)
+        except:
+            context = {
+                'Error': '!!! Please check and Retry. Thank You !!!',
+            }
+            return render(request, 'index.html', context)
     context ={
         'title': 'YouTube MP3 Converter - Code Vinu',
     }
