@@ -14,6 +14,7 @@ def index(request):
         link = request.POST.get('link')
         print(link)
         try :
+        
             yt = YouTube(link)
             title = yt.title
             filename = nameConverter(title) + '.mp3'
@@ -23,6 +24,7 @@ def index(request):
 
             stream = yt.streams.get_audio_only()
             clean()
+        
             stream.download('media', filename)
             print('Successful')
             context = {
