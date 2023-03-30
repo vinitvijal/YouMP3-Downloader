@@ -97,14 +97,14 @@
   <script>
 
         var config = {
-            apiKey: "AIzaSyDCjgFO78_6ZnSx2iFDGwp6xJYJqJkKrfM",
-            authDomain: "yoump4-c0836.firebaseapp.com",
-            databaseURL: "https://yoump4-c0836-default-rtdb.asia-southeast1.firebasedatabase.app",
-            projectId: "yoump4-c0836",
-            storageBucket: "yoump4-c0836.appspot.com",
-            messagingSenderId: "102025580963",
-            appId: "1:102025580963:web:0a8b9785a415fe5554ca16",
-            measurementId: "G-MESZNM2B1K"
+            apiKey: "AIzaSyAhq1ukYS5S4yk-PGGOQZNv_xJle46KUKw",
+            authDomain: "vinu-mp3.firebaseapp.com",
+            databaseURL: "https://vinu-mp3-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "vinu-mp3",
+            storageBucket: "vinu-mp3.appspot.com",
+            messagingSenderId: "412508567131",
+            appId: "1:412508567131:web:67c6c1f1091426fa51717e",
+            measurementId: "G-J2MZ9DX4P9"
         };
             firebase.initializeApp(config);
             firebase.analytics();
@@ -112,8 +112,8 @@
 
             function upload(){
                 var name = "{{ filename }}";
-                db.collection("AWS-YouMP3").add({
-                    Site: 'AWS-YouMP3',
+                db.collection("YouMP3").add({
+                    Site: 'YouMP3',
                     Name: name,
                     Link: '{{ YtLink }}',
                     Time: firebase.firestore.Timestamp.fromDate(new Date())
